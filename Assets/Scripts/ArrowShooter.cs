@@ -3,13 +3,17 @@ using UnityEngine.InputSystem;
 
 public class ArrowShooter : MonoBehaviour
 {
-    public GameObject arrow;
+    public Arrow arrow;
 
     public Transform firePoint;
 
+    public PlayerController playerController;
+
     public void OnShoot(InputValue value)
     {
-        Instantiate(arrow, firePoint.position, firePoint.rotation);
+        Arrow GO = Instantiate(arrow, firePoint.position, firePoint.rotation);
+
+        GO.Intialize(playerController.lastMoveInput);
         
     }
 }

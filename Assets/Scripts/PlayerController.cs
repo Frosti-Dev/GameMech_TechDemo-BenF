@@ -8,12 +8,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
+    public Vector2 lastMoveInput;
+
+
     //Hash References for Animator
     private Animator playerAnimController;
 
-    private int MoveInputXHash = Animator.StringToHash("MoveInputX");
-    private int MoveInputYHash = Animator.StringToHash("MoveInputY");
-    private int isMovingHash = Animator.StringToHash("isMoving");
+    public int MoveInputXHash = Animator.StringToHash("MoveInputX");
+    public int MoveInputYHash = Animator.StringToHash("MoveInputY");
+    public int isMovingHash = Animator.StringToHash("isMoving");
 
     private void Awake()
     {
@@ -31,6 +34,8 @@ public class PlayerController : MonoBehaviour
         playerRb.MovePosition(playerRb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
         HandlePlayerAnimations();
+
+        GetLastMoveInput();
     }
 
     private void HandlePlayerAnimations()
@@ -46,6 +51,17 @@ public class PlayerController : MonoBehaviour
         else
         {
             playerAnimController.SetBool(isMovingHash, false);
+        }
+    }
+
+    private void GetLastMoveInput()
+    {
+        if (moveInput != Vector2.zero)
+        {
+            //Debug.Log($"X: {lastMoveInputX}, Y {lastMoveInputY}");
+
+            lastMoveInput = moveInput;
+            
         }
     }
 

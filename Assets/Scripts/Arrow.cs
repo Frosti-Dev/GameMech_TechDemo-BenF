@@ -6,6 +6,19 @@ public class Arrow : MonoBehaviour
 {
     public float speed;
 
+    Vector2 movementDirection;
+
+    public void Intialize(Vector2 direction)
+    {
+        Debug.Log(direction);
+
+        movementDirection = direction;
+
+
+        transform.up = direction;
+        
+    }
+
     IEnumerator waitToDisable()
     {
         yield return new WaitForSeconds(3f);
@@ -25,7 +38,9 @@ public class Arrow : MonoBehaviour
 
     private void Update()
     {
-        gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
+        //Debug.Log($"X: {playerController.lastMoveInputX}, Y {playerController.lastMoveInputY}");
+         gameObject.transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -3,9 +3,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject level01;
-    public GameObject level02;
-    public GameObject level03;
-    public GameObject level04;
+    
 
     public GameObject currentActiveLevel;
 
@@ -21,10 +19,8 @@ public class LevelManager : MonoBehaviour
 
         currentActiveLevel = level01;
 
-        level01.SetActive(false);
-        level02.SetActive(false);
-        level03.SetActive(false);
-        level04.SetActive(false);
+        level01.SetActive(true);
+        
     }
 
     public void LevelChange(GameObject Level, Transform SpawnPoint)
@@ -38,9 +34,7 @@ public class LevelManager : MonoBehaviour
     public void ResetLevel()
     {
         level01.SetActive(false);
-        level02.SetActive(false);
-        level03.SetActive(false);
-        level04.SetActive(false);
+        
 
         player.transform.position = initSpawn;
 
