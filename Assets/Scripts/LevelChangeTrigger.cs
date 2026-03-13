@@ -16,7 +16,7 @@ public class LevelChangeTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered level change trigger");
+            //Debug.Log("Player entered level change trigger");
 
             levelManager.LevelChange(levelToActivate, spawnLocation);
         }
