@@ -124,6 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveInput: {x: 0, y: 0}
+  lastMoveInput: {x: 0, y: 0}
+  MoveInputXHash: -1592349475
+  MoveInputYHash: -703488949
+  isMovingHash: -27727268
 --- !u!114 &491274626050091659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7ccdee90f8de847ba61590016efc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 889913366880285300, guid: d281384629815e943b699f331d691373, type: 3}
+  arrow: {fileID: 7138469314319886190, guid: d281384629815e943b699f331d691373, type: 3}
   firePoint: {fileID: 545093331916067656}
+  playerController: {fileID: 0}
 --- !u!114 &198437417570066291
 MonoBehaviour:
   m_ObjectHideFlags: 0
