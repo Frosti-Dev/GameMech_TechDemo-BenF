@@ -35,4 +35,10 @@ public class WallTrigger : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        wall.SetActive(false);
+    }
+
 }
