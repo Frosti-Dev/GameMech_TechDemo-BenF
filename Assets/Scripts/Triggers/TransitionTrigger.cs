@@ -15,6 +15,8 @@ public class TransitionTrigger : MonoBehaviour
 
     private float duration;
 
+    [SerializeField] private bool movePlayer;
+
     [Header("Position Change")]
     [SerializeField] private Vector3 targetCameraPosition;
     [SerializeField] private Vector2 targetPlayerPostion;
@@ -42,7 +44,7 @@ public class TransitionTrigger : MonoBehaviour
 
             cameraMove.transform.position = Vector3.Lerp(cameraMove.transform.position, targetCameraPosition, duration * Time.deltaTime);
 
-            StartCoroutine(WaitForCamera());
+            if(movePlayer) StartCoroutine(WaitForCamera());
 
         }
     }
