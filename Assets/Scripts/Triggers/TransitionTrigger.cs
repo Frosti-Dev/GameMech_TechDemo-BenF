@@ -87,4 +87,11 @@ public class TransitionTrigger : MonoBehaviour
         thisTrigger.SetActive(false);
         nextTrigger.SetActive(true);
     }
+
+    //if trigger is avoided, this fixes the set triggers
+    public void SkippedTriggerFix()
+    {
+        thisTrigger.SetActive(true);
+        nextTrigger.SetActive(false);
+    }
 }

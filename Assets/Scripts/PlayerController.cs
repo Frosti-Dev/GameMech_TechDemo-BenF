@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 lastMoveInput;
 
+    public Vector3 spawnPos;
+
 
     //Hash References for Animator
     private Animator playerAnimController;
