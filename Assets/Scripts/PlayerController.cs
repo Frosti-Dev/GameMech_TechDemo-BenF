@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
+    private ParticleSystem particle;
+
     public Vector2 lastMoveInput;
 
     public Vector3 spawnPos;
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
 
         playerAnimController = GetComponentInChildren<Animator>();
+
+        particle = GetComponentInChildren<ParticleSystem>();
     }
     public void OnMove(InputValue value)
     {
@@ -48,11 +52,14 @@ public class PlayerController : MonoBehaviour
             playerAnimController.SetFloat(MoveInputYHash, moveInput.y);
 
             playerAnimController.SetBool(isMovingHash, true);
+
+            particle.gameObject.SetActive(true);
         }
 
         else
         {
             playerAnimController.SetBool(isMovingHash, false);
+            particle.gameObject.SetActive(false);
         }
     }
 
