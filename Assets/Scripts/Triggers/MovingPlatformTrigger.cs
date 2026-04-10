@@ -46,6 +46,7 @@ public class MovingPlatformTrigger : MonoBehaviour
 
             collision.gameObject.transform.position = platform.transform.position;
 
+            
 
             if (targetDestinationDown)
             {

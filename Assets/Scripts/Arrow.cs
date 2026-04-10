@@ -21,8 +21,8 @@ public class Arrow : MonoBehaviour
 
     IEnumerator waitToDisable()
     {
-        yield return new WaitForSeconds(3f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
 
     }
 

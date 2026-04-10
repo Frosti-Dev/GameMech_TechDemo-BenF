@@ -7,9 +7,14 @@ public class ServiceHub : MonoBehaviour
     [Header("Manager References")]
     public PlayerController playerController;
     public LevelManager levelManager;
-    public GameStateManager gameStateManager;
     public UIManager uiManager;
 
+    // public accessors for each system to allow other scripts to easily access them
+
+    public PlayerController PlayerController => playerController;
+    public UIManager UIManager => uiManager;
+    public LevelManager LevelManager => levelManager;
+   
     private void Awake()
     {
         #region Singleton Pattern

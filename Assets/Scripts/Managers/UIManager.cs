@@ -1,42 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuUI;
-    [SerializeField] private GameObject gameplayUI;
-    [SerializeField] private GameObject pausedUI;
-    [SerializeField] private GameObject optionsUI;
+    public TMP_Text coinText;
+    public PlayerController player;
 
-    public void HideAllUI()
+    private void Start()
     {
-        gameplayUI.SetActive(false);
-        mainMenuUI.SetActive(false);
-        pausedUI.SetActive(false);
-        optionsUI.SetActive(false);
-
+        player = ServiceHub.Instance.playerController;
     }
 
-    public void ShowMainMenuUI()
+    private void Update()
     {
-        HideAllUI();
-        mainMenuUI.SetActive(true);
-    }
-
-    public void ShowGameplayUI()
-    {
-        HideAllUI();
-        gameplayUI.SetActive(true);
-    }
-    public void ShowPausedUI()
-    {
-        optionsUI.SetActive(false);
-        pausedUI.SetActive(true);
-    }
-
-    public void ShowOptionsUI()
-    {
-        pausedUI.SetActive(false);
-        optionsUI.SetActive(true);
+        coinText.text = $"Coins: {player.coins}";
     }
 
 }

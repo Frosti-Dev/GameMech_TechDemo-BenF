@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public int coins;
+
     public float moveSpeed = 5f;
     public Vector2 moveInput;
 
@@ -18,9 +20,9 @@ public class PlayerController : MonoBehaviour
     //Hash References for Animator
     private Animator playerAnimController;
 
-    public int MoveInputXHash = Animator.StringToHash("MoveInputX");
-    public int MoveInputYHash = Animator.StringToHash("MoveInputY");
-    public int isMovingHash = Animator.StringToHash("isMoving");
+    private int MoveInputXHash = Animator.StringToHash("MoveInputX");
+    private int MoveInputYHash = Animator.StringToHash("MoveInputY");
+    private int isMovingHash = Animator.StringToHash("isMoving");
 
     private void Awake()
     {
